@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -25,17 +26,17 @@ public class Customer {
     private String province;
     private String country;
     private String postCode;
-    @Embedded
+   /* @Embedded
     private List<Email> emails;
     @Embedded
     private List<Phone> phones;
     @Embedded
-    private List<Fax> faxes;
+    private List<Fax> faxes;*/
 
     public Customer() {
     }
 
-    public Customer(String customerId, String firstName, String lastName, String street, String city, String province, String country, String postCode, List<Email> emails, List<Phone> phones, List<Fax> faxes) {
+    public Customer(String customerId, String firstName, String lastName, String street, String city, String province, String country, String postCode) {
         this.customerId = customerId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -44,9 +45,12 @@ public class Customer {
         this.province = province;
         this.country = country;
         this.postCode = postCode;
+     /*   this.emails = new ArrayList<>();
+        this.phones = new ArrayList<>();
+        this.faxes = new ArrayList<>();
         this.emails = emails;
         this.phones = phones;
-        this.faxes = faxes;
+        this.faxes = faxes;*/
     }
 
     public String getCustomerId() {
@@ -80,7 +84,7 @@ public class Customer {
     public String getPostCode() {
         return postCode;
     }
-
+/*
     public List<Email> getEmails() {
         return emails;
     }
@@ -91,7 +95,7 @@ public class Customer {
 
     public List<Fax> getFaxes() {
         return faxes;
-    }
+    }*/
 
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
@@ -125,7 +129,7 @@ public class Customer {
         this.postCode = postCode;
     }
     
-    public void addEmail(Email email){
+  /*  public void addEmail(Email email){
         emails.add(email);
     }
     
@@ -147,11 +151,10 @@ public class Customer {
     
     public void deleteFax(Fax fax){
         faxes.remove(fax);
-    }
+    }*/
 
     @Override
     public String toString() {
-        return "Customer{" + "customerId=" + customerId + ", firstName=" + firstName + ", lastName=" + lastName + ", street=" + street + ", city=" + city + ", province=" + province + ", country=" + country + ", postCode=" + postCode + ", emails=" + emails + ", phones=" + phones + ", faxes=" + faxes + '}';
+        return "Customer{" + "customerId=" + customerId + ", firstName=" + firstName + ", lastName=" + lastName + ", street=" + street + ", city=" + city + ", province=" + province + ", country=" + country + ", postCode=" + postCode + '}';
     }
-
 }

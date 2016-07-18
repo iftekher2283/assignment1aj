@@ -6,11 +6,18 @@
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/airlinesdb?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.password">123</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
     <mapping class="model.Flight"/>
     <mapping class="model.Airline"/>
     <mapping class="model.Airport"/>
     <mapping class="model.AvailableFlight"/>
+    <mapping class="model.Fax"/>
+    <mapping class="model.Phone"/>
+    <mapping class="model.Customer"/>
+    <mapping class="model.Email"/>
+    <mapping class="model.Booking"/>
+    <mapping class="model.BookingClass"/>
+    <mapping class="model.BookingStatus"/>
+    <mapping class="model.City"/>
   </session-factory>
 </hibernate-configuration>

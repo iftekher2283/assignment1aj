@@ -5,22 +5,32 @@
  */
 package model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
  * @author iftekher
  */
+@Entity
 public class Booking {
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int bookingNo;
-    private int customerId;
+    private String customerId;
     private String flightNo;
-    private int statusId;
-    private int classId;
+    private String statusId;
+    private String classId;
     private String origin;
     private String destination;
+    private String departureDate;
     private String departureTime;
+    private String arrivalDate;
     private String arrivalTime;
-    private int bookingCity;
-    private int paidBy;
+    private String bookingCity;
+    private String paidBy;
     private double flightPrice;
     private double totalPrice;
     private double paidAmount;
@@ -30,15 +40,16 @@ public class Booking {
     public Booking() {
     }
 
-    public Booking(int bookingNo, int customerId, String flightNo, int statusId, int classId, String origin, String destination, String departureTime, String arrivalTime, int bookingCity, int paidBy, double flightPrice, double totalPrice, double paidAmount, double balance, String bookingDate) {
-        this.bookingNo = bookingNo;
+    public Booking(String customerId, String flightNo, String statusId, String classId, String origin, String destination, String departureDate, String departureTime, String arrivalDate, String arrivalTime, String bookingCity, String paidBy, double flightPrice, double totalPrice, double paidAmount, double balance, String bookingDate) {
         this.customerId = customerId;
         this.flightNo = flightNo;
         this.statusId = statusId;
         this.classId = classId;
         this.origin = origin;
         this.destination = destination;
+        this.departureDate = departureDate;
         this.departureTime = departureTime;
+        this.arrivalDate = arrivalDate;
         this.arrivalTime = arrivalTime;
         this.bookingCity = bookingCity;
         this.paidBy = paidBy;
@@ -53,7 +64,7 @@ public class Booking {
         return bookingNo;
     }
 
-    public int getCustomerId() {
+    public String getCustomerId() {
         return customerId;
     }
 
@@ -61,11 +72,11 @@ public class Booking {
         return flightNo;
     }
 
-    public int getStatusId() {
+    public String getStatusId() {
         return statusId;
     }
 
-    public int getClassId() {
+    public String getClassId() {
         return classId;
     }
 
@@ -77,19 +88,27 @@ public class Booking {
         return destination;
     }
 
+    public String getDepartureDate() {
+        return departureDate;
+    }
+
     public String getDepartureTime() {
         return departureTime;
+    }
+
+    public String getArrivalDate() {
+        return arrivalDate;
     }
 
     public String getArrivalTime() {
         return arrivalTime;
     }
 
-    public int getBookingCity() {
+    public String getBookingCity() {
         return bookingCity;
     }
 
-    public int getPaidBy() {
+    public String getPaidBy() {
         return paidBy;
     }
 
@@ -117,7 +136,7 @@ public class Booking {
         this.bookingNo = bookingNo;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
 
@@ -125,11 +144,11 @@ public class Booking {
         this.flightNo = flightNo;
     }
 
-    public void setStatusId(int statusId) {
+    public void setStatusId(String statusId) {
         this.statusId = statusId;
     }
 
-    public void setClassId(int classId) {
+    public void setClassId(String classId) {
         this.classId = classId;
     }
 
@@ -141,19 +160,27 @@ public class Booking {
         this.destination = destination;
     }
 
+    public void setDepartureDate(String departureDate) {
+        this.departureDate = departureDate;
+    }
+
     public void setDepartureTime(String departureTime) {
         this.departureTime = departureTime;
+    }
+
+    public void setArrivalDate(String arrivalDate) {
+        this.arrivalDate = arrivalDate;
     }
 
     public void setArrivalTime(String arrivalTime) {
         this.arrivalTime = arrivalTime;
     }
 
-    public void setBookingCity(int bookingCity) {
+    public void setBookingCity(String bookingCity) {
         this.bookingCity = bookingCity;
     }
 
-    public void setPaidBy(int paidBy) {
+    public void setPaidBy(String paidBy) {
         this.paidBy = paidBy;
     }
 
@@ -179,7 +206,7 @@ public class Booking {
 
     @Override
     public String toString() {
-        return "Booking{" + "bookingNo=" + bookingNo + ", customerId=" + customerId + ", flightNo=" + flightNo + ", statusId=" + statusId + ", classId=" + classId + ", origin=" + origin + ", destination=" + destination + ", departureTime=" + departureTime + ", arrivalTime=" + arrivalTime + ", bookingCity=" + bookingCity + ", paidBy=" + paidBy + ", flightPrice=" + flightPrice + ", totalPrice=" + totalPrice + ", paidAmount=" + paidAmount + ", balance=" + balance + ", bookingDate=" + bookingDate + '}';
+        return "Booking{" + "bookingNo=" + bookingNo + ", customerId=" + customerId + ", flightNo=" + flightNo + ", statusId=" + statusId + ", classId=" + classId + ", origin=" + origin + ", destination=" + destination + ", departureDate=" + departureDate + ", departureTime=" + departureTime + ", arrivalDate=" + arrivalDate + ", arrivalTime=" + arrivalTime + ", bookingCity=" + bookingCity + ", paidBy=" + paidBy + ", flightPrice=" + flightPrice + ", totalPrice=" + totalPrice + ", paidAmount=" + paidAmount + ", balance=" + balance + ", bookingDate=" + bookingDate + '}';
     }
-    
+
 }

@@ -5,11 +5,16 @@
  */
 package model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  *
  * @author iftekher
  */
+@Entity
 public class City {
+    @Id
     private String cityId;
     private String countryCode;
     private String cityName;

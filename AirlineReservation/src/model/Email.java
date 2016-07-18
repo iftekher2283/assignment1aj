@@ -5,16 +5,20 @@
  */
 package model;
 
-import javax.persistence.Embeddable;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  *
- * @author iftekher
+ * @author RAHUL
  */
-
-@Embeddable
+@Entity
 public class Email {
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private int sl;
     private String customerId;
     private String emailId;
 
@@ -26,6 +30,10 @@ public class Email {
         this.emailId = emailId;
     }
 
+    public int getSl() {
+        return sl;
+    }
+    
     public String getCustomerId() {
         return customerId;
     }
@@ -34,8 +42,8 @@ public class Email {
         return emailId;
     }
 
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
+    public void setSl(int sl) {
+        this.sl = sl;
     }
 
     public void setEmailId(String emailId) {
@@ -44,6 +52,6 @@ public class Email {
 
     @Override
     public String toString() {
-        return "Email{" + "customerId=" + customerId + ", emailId=" + emailId + '}';
+        return "" + this.emailId;
     }
 }

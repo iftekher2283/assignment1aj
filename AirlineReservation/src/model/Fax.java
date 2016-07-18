@@ -5,14 +5,20 @@
  */
 package model;
 
-import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  *
- * @author iftekher
+ * @author RAHUL
  */
-@Embeddable
+@Entity
 public class Fax {
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private int sl;
     private String customerId;
     private String faxCountryCode;
     private String faxAreaCode;
@@ -26,6 +32,10 @@ public class Fax {
         this.faxCountryCode = faxCountryCode;
         this.faxAreaCode = faxAreaCode;
         this.faxNumber = faxNumber;
+    }
+
+    public int getSl() {
+        return sl;
     }
 
     public String getCustomerId() {
@@ -44,8 +54,8 @@ public class Fax {
         return faxNumber;
     }
 
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
+    public void setSl(int sl) {
+        this.sl = sl;
     }
 
     public void setFaxCountryCode(String faxCountryCode) {
@@ -62,7 +72,7 @@ public class Fax {
 
     @Override
     public String toString() {
-        return "Fax{" + "customerId=" + customerId + ", faxCountryCode=" + faxCountryCode + ", faxAreaCode=" + faxAreaCode + ", faxNumber=" + faxNumber + '}';
+        return "" + this.faxCountryCode + " - " + this.faxAreaCode + " - " + this.faxNumber;
     }
-    
+                  
 }

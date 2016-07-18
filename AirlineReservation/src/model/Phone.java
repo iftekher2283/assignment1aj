@@ -5,14 +5,20 @@
  */
 package model;
 
-import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  *
- * @author iftekher
+ * @author RAHUL
  */
-@Embeddable
+@Entity
 public class Phone {
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private int sl;
     private String customerId;
     private String phoneCountryCode;
     private String phoneAreaCode;
@@ -26,6 +32,10 @@ public class Phone {
         this.phoneCountryCode = phoneCountryCode;
         this.phoneAreaCode = phoneAreaCode;
         this.phoneNumber = phoneNumber;
+    }
+
+    public int getSl() {
+        return sl;
     }
 
     public String getCustomerId() {
@@ -44,10 +54,6 @@ public class Phone {
         return phoneNumber;
     }
 
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
-    }
-
     public void setPhoneCountryCode(String phoneCountryCode) {
         this.phoneCountryCode = phoneCountryCode;
     }
@@ -60,9 +66,13 @@ public class Phone {
         this.phoneNumber = phoneNumber;
     }
 
+    public void setSl(int sl) {
+        this.sl = sl;
+    }
+    
     @Override
     public String toString() {
-        return "Phone{" + "customerId=" + customerId + ", phoneCountryCode=" + phoneCountryCode + ", phoneAreaCode=" + phoneAreaCode + ", phoneNumber=" + phoneNumber + '}';
+        return "" + this.phoneCountryCode + " - " + this.phoneAreaCode + " - " + this.phoneNumber;
     }
     
 }
